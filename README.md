@@ -26,7 +26,9 @@ In this assignment, I was supposed to implement a certain number of commands tha
 
 **list -i pathname --- Same as above, but with a specified pathname.**
 
-**list -h --- Displays all hidden files in the current directory.\nlist -h pathname --- Same as above, but with a specified pathname.**
+**list -h --- Displays all hidden files in the current directory.
+
+**list -h pathname --- Same as above, but with a specified pathname.**
 
 **-------------------**
 
