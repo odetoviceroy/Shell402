@@ -1,0 +1,6 @@
+wd
+list
+list -h
+create -f butt.jpg
+create -h list.c list2.c
+quit
