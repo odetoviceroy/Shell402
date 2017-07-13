@@ -24,9 +24,9 @@ In this assignment, I was supposed to implement a certain number of commands tha
 
 **list -i pathname --- Same as above, but with a specified pathname.**
 
-**list -h --- Displays all hidden files in the current directory.\nlist -h pathname --- Same as above, but with a specified pathname. **
+**list -h --- Displays all hidden files in the current directory.\nlist -h pathname --- Same as above, but with a specified pathname.**
 
-**------------------- **
+**-------------------**
 
 **create -f filepath --- Create a new file with a specified pathname.**
 
@@ -36,7 +36,7 @@ In this assignment, I was supposed to implement a certain number of commands tha
 
 **create -s oldname newname --- Create a symbolic (soft) link with a specified old name and a specified new name.**
 
-**------------------- **
+**-------------------**
 
 **help -- Displays this information.**
 
