@@ -7,38 +7,37 @@ CFLAGS = -g
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-all: shell402 #list create
+all: shell402 list create
 
-# TODO: retype input.o into shell402 exec file
-shell402: shell402.o shell402functs.o
-	gcc shell402.o shell402functs.o -o shell402
+shell402: shell402.o shell402functs.o input.o
+	gcc shell402.o shell402functs.o input.o -o shell402
 
 shell402.o: shell402.c shell402functs.h
 	gcc -c shell402.c
 
-shell402functs.o: shell402functs.c shell402functs.h
+shell402functs.o: shell402functs.c shell402functs.h macros.h
 	gcc -c shell402functs.c
 
-#input.o: input.c input.h
-	#gcc -c input.c
+input.o: input.c input.h
+	gcc -c input.c
 
-#list: list.o listFunctions.o
-	#gcc list.o listFunctions.o -o list
+list: list.o listfuncts.o
+	gcc list.o listfuncts.o -o list
 
-#list.o: list.c listFunctions.h
-	#gcc -c list.c
+list.o: list.c listfuncts.h
+	gcc -c list.c
 
-#listFunctions.o: listFunctions.c listFunctions.h
-	#gcc -c listFunctions.c
+listfuncts.o: listfuncts.c listfuncts.h
+	gcc -c listfuncts.c
 
-#create: create.o createFunctions.o
-		#gcc create.o createFunctions.o -o create
+create: create.o createfuncts.o
+		gcc create.o createfuncts.o -o create
 
-#create.o: create.c createFunctions.h
-		#gcc -c create.c
+create.o: create.c createfuncts.h
+		gcc -c create.c
 
-#createFunctions.o: createFunctions.c createFunctions.h
-		#gcc -c createFunctions.c
+createfuncts.o: createfuncts.c createfuncts.h
+		gcc -c createfuncts.c
 
 clean:
 	rm -f *.o core
