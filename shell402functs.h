@@ -11,3 +11,5 @@ DIR * processShellCommand(char *, DIR *); // function that handles the wd, chwd,
 void forkListProcess(char *); // function to handle the "list"-related commands, executes ./list.exe
 
 void forkCreateProcess(char *); // function to handle the "create"-related commands, executes ./create.exe
+
+void printHelp(); // function to handle the "help" command, prints instructions on using shell402
