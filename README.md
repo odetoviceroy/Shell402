@@ -16,6 +16,8 @@ In this assignment, I was supposed to implement a certain number of commands tha
 
 **chwd pathname --- Changes the current working directory to the one specified in the second argument.**
 
+**-------------------**
+
 **list --- Displays all non-hidden files in the current directory**
 
 **list pathname -- Same as above, but with a specified pathname.**
@@ -43,5 +45,7 @@ In this assignment, I was supposed to implement a certain number of commands tha
 **quit --- Exits out of the program.**
 
 **Note:** This program will only work on a cygwin64 terminal, as the executable files that will be called will have ./executable.exe as their format. You can change the format of the executable file in the **macros.h** file.
+
+**Note:** The **list** and **create** executable files can actually be run on their own without the use of running the **shell402** exeuctable file.
 
 The full list of commands can also be viewed under the command **help**.
