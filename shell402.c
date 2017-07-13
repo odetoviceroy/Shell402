@@ -10,6 +10,8 @@
 #include <unistd.h> // need this for cygwin64 terminal
 
 #include "shell402functs.h"
+#include "input.h"
+
 #define BUFFERSIZE 255
 
 int main(int argc, char * argv[]){
@@ -22,11 +24,25 @@ int main(int argc, char * argv[]){
   //--------------------------------------------------------------
   //------------ Case 1: shell402 scriptfile ----------------
   if(argc == 2){
-    // TODO: fill 'er up
+    FILE * finp = fopen(argv[1], "r");
+    int counter = 0;
+    if(finp == NULL) { printf("Error in opening file.\n"); exit(1); }
+    while(!feof(finp)){
+      if(feof(finp)) break;
+      char * buffer = getLine(finp);
+      if(counter % 2 == 0){
+        printf("LINE READ: %s WITH SIZE %d\n", buffer, strlen(buffer));
+        dir = processShellCommand(buffer, dir);
+      }
+      buffer[0] = '\0';
+      free(buffer);
+      counter += 1;
+    }
   }
   //--------------------------------------------------------------
   //------------ Case 2: argv is just "shell402" -----------------
   else{
+    printf("Welcome to Shell402!\nIf you have any questions as to what commands you may use on this program, type help.\n");
     char * buffer; // buffer string to hold the next command
     printf("Please enter a command: ");
     buffer = (char *)malloc(sizeof(char) * BUFFERSIZE);
