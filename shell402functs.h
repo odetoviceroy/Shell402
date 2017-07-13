@@ -7,3 +7,7 @@ void quit(); // function that handles the "quit" command: that is, exits the pro
 DIR * chwd(); // function that handles the "chwd" command: that is, changes the current working directory
 
 DIR * processShellCommand(char *, DIR *); // function that handles the wd, chwd, quit commands
+
+void forkListProcess(char *); // function to handle the "list"-related commands, executes ./list.exe
+
+void forkCreateProcess(char *); // function to handle the "create"-related commands, executes ./create.exe
