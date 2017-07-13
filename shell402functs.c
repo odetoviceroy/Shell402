@@ -86,7 +86,7 @@ void forkCreateProcess(char * buffer){
     }
     if(strcmp(flagDetect,"-d") == 0){ // command is "create -d dirpath"
       printf("FLAG DETECTED: %s WITH PATHNAME %s\n", flagDetect, pathName);
-      execlp("./create.exe", "create", "-d", pathName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
+      execlp(createExec, "create", "-d", pathName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
       free(pathName); free(flagDetect);
     }
     char * oldName = strtok(pathName, " "); // split the pathName into oldName and linkName for -h, -s options
@@ -94,12 +94,12 @@ void forkCreateProcess(char * buffer){
     printf("PATHNAME %s NEWNAME: %s\n", oldName, newName);
     if(strcmp(flagDetect,"-h") == 0){ // command is "create -h oldname linkname"
       printf("FLAG DETECTED: %s WITH PATHNAME %s\n", flagDetect, pathName);
-      execlp("./create.exe", "create", "-h", oldName, newName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
+      execlp(createExec, "create", "-h", oldName, newName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
       free(pathName); free(flagDetect);
     }
     if(strcmp(flagDetect,"-h") == 0){ // command is "create -s oldname linkname"
       printf("FLAG DETECTED: %s WITH PATHNAME %s\n", flagDetect, pathName);
-      execlp("./create.exe", "create", "-s", oldName, newName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
+      execlp(createExec, "create", "-s", oldName, newName, NULL); // TODO: SWITCH TO CREATE INSTEAD OF ./CREATE.EXE PLEASEEES
       free(pathName); free(flagDetect);
     }
     free(pathName); free(flagDetect);
